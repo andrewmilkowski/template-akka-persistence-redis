@@ -1,0 +1,3 @@
+Template project (maven and sbt) for akka 0.10 redis with scala 2.8.0
+
+Includes sample Spec

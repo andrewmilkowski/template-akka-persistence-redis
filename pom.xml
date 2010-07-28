@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0
+.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.argmaps.test.persistence</groupId>
+    <artifactId>akka</artifactId>
+    <packaging>jar</packaging>
+    <name>akka</name>
+    <version>0.1.0-SNAPSHOT</version>
+
+    <properties>
+      <!-- Scala Libraries -->
+      <scala.version>2.8.0</scala.version>
+      <spec.version>1.6.5-SNAPSHOT</spec.version>
+      <scalatest.version>1.2</scalatest.version>
+
+      <!-- Akka -->
+      <akka.version>0.10</akka.version>
+      
+      <!-- Liftweb -->
+      <lift.version>2.0-scala280-SNAPSHOT</lift.version>
+
+      <!-- Json serialization -->
+      <sjson.version>0.7-SNAPSHOT</sjson.version>
+      
+      <!-- Configgy -->
+      <configgy.version>1.5.4</configgy.version>
+      
+      <!-- Multiverse -->
+      <multiverse.version>0.6-SNAPSHOT</multiverse.version>
+      
+      <!-- jsr166x -->
+      <jsr166x.version>1.0</jsr166x.version>
+
+      <!-- Werkz -->
+      <werkz.version>2.2.1</werkz.version>
+     
+      <!-- JTA 1.1 -->
+      <geronimo-1.1-jta.version>1.1.1</geronimo-1.1-jta.version>
+      
+      <!-- Junit -->
+      <junit.version>4.8.2</junit.version>
+      
+      <!-- Slf4j -->
+      <slf4j.version>1.6.1</slf4j.version>
+      
+      <!-- Paranamer -->
+      <paranamer.version>2.0</paranamer.version>
+    
+      <!-- Netty -->
+      <netty.version>3.2.1.Final</netty.version>
+    
+    </properties>
+
+  <repositories>
+    <!-- Scala -->
+    <repository>
+      <id>scala-tools.org</id>
+      <name>Scala-Tools Maven2 Repository</name>
+      <url>http://scala-tools.org/repo-releases</url>
+    </repository>
+    <!--  Codehouse -->
+    <repository>
+      <id>codehouse.org</id>
+      <name>Codehouse Maven2 Repository</name>
+      <url>http://snapshots.repository.codehaus.org</url>
+    </repository>
+    <!--  Scalablesolutions -->
+    <repository>
+      <id>scalablesolutions.se</id>
+      <name>Scalablesolutions Maven2 Repository</name>
+      <url>http://scalablesolutions.se/akka/repository</url>
+    </repository>
+    <!--  Jboss -->
+    <repository>
+      <id>jboss.org</id>
+      <name>Jboss Maven2 Repository</name>
+      <url>https://repository.jboss.org/nexus/content/groups/public</url>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>scala-tools.org</id>
+      <name>Scala-Tools Maven2 Repository</name>
+      <url>http://scala-tools.org/repo-releases</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <dependencies>
+
+    <!-- Main Scala Libraries -->
+
+    <dependency>
+      <groupId>org.scala-lang</groupId>
+      <artifactId>scala-library</artifactId>
+      <version>${scala.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.scala-tools.testing</groupId>
+      <artifactId>specs_2.8.0.RC7</artifactId>
+      <version>${spec.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.scalatest</groupId>
+      <artifactId>scalatest</artifactId>
+      <version>${scalatest.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.scala-tools.testing</groupId>
+      <artifactId>scalacheck_${scala.version}</artifactId>
+      <version>1.7</version>
+      <scope>test</scope>
+    </dependency>
+   
+    <!-- Akka Core -->
+    <dependency>
+      <groupId>se.scalablesolutions</groupId>
+      <artifactId>akka-core_${scala.version}</artifactId>
+      <version>${akka.version}</version>
+    </dependency>
+    
+    <!-- Akka Persistence (Common) -->
+    <dependency>
+      <groupId>se.scalablesolutions</groupId>
+      <artifactId>akka-persistence-common_${scala.version}</artifactId>
+      <version>${akka.version}</version>
+    </dependency>
+
+    <!-- Akka Persistence (Common) -->
+    <dependency>
+      <groupId>se.scalablesolutions</groupId>
+      <artifactId>akka-persistence-redis_${scala.version}</artifactId>
+      <version>${akka.version}</version>
+    </dependency>
+  
+    <!-- Lift -->  
+
+    <dependency>
+      <groupId>net.liftweb</groupId>
+      <artifactId>lift-common_${scala.version}</artifactId>
+      <version>${lift.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>net.liftweb</groupId>
+      <artifactId>lift-json_${scala.version}</artifactId>
+      <version>${lift.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>net.liftweb</groupId>
+      <artifactId>lift-util_${scala.version}</artifactId>
+      <version>${lift.version}</version>
+    </dependency>
+    
+    <!-- Paranamer (Needed by Lift-Json) -->
+
+    <dependency>
+      <groupId>com.thoughtworks.paranamer</groupId>
+      <artifactId>paranamer</artifactId>
+      <version>${paranamer.version}</version>
+    </dependency>
+    
+    <!-- Json serialization -->
+
+    <dependency>
+      <groupId>sjson.sjson</groupId>
+      <artifactId>sjson_${scala.version}</artifactId>
+      <version>${sjson.version}</version>
+    </dependency>
+
+    <!-- Configgy -->
+
+    <dependency>
+      <groupId>net.lag</groupId>
+      <artifactId>configgy_${scala.version}</artifactId>
+      <version>${configgy.version}</version>
+    </dependency>
+   
+
+    <!-- Multiverse -->
+
+    <dependency>
+      <groupId>org.multiverse</groupId>
+      <artifactId>multiverse-alpha</artifactId>
+      <version>${multiverse.version}</version>
+    </dependency>
+ 
+    <!-- jsr166x -->
+
+    <dependency>
+      <groupId>jsr166x</groupId>
+      <artifactId>jsr166x</artifactId>
+      <version>${jsr166x.version}</version>
+    </dependency>
+    
+    <!-- Werkz -->
+
+    <dependency>
+      <groupId>org.codehaus.aspectwerkz</groupId>
+      <artifactId>aspectwerkz-nodeps-jdk5</artifactId>
+      <version>${werkz.version}</version>
+    </dependency>
+    
+    <!-- JTA -->
+
+    <dependency>
+      <groupId>org.apache.geronimo.specs</groupId>
+      <artifactId>geronimo-jta_1.1_spec</artifactId>
+      <version>${geronimo-1.1-jta.version}</version>
+    </dependency>
+
+    <!-- Codehaus aspectwerkz -->    
+
+    <dependency>
+      <groupId>org.codehaus.aspectwerkz</groupId>
+      <artifactId>aspectwerkz-jdk5</artifactId>
+      <version>${werkz.version}</version>
+    </dependency>
+
+    <!-- Jboss netty -->
+    
+    <dependency>
+      <groupId>org.jboss.netty</groupId>
+      <artifactId>netty</artifactId>
+      <version>${netty.version}</version>
+    </dependency>
+    
+    <!-- JUnit -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- Slf4j -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4j.version}</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <!-- for LiftConsole -->
+    
+    <dependency>
+      <groupId>org.scala-lang</groupId>
+      <artifactId>scala-compiler</artifactId>
+      <version>${scala.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <sourceDirectory>src/main/scala</sourceDirectory>
+    <testSourceDirectory>src/test/scala</testSourceDirectory>
+    <plugins>
+      <plugin>
+        <groupId>org.scala-tools</groupId>
+        <artifactId>maven-scala-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>compile</goal>
+              <goal>testCompile</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <scalaVersion>${scala.version}</scalaVersion>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.scala-tools</groupId>
+        <artifactId>maven-scala-plugin</artifactId>
+        <configuration>
+          <scalaVersion>${scala.version}</scalaVersion>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
+</project>
